@@ -101,6 +101,12 @@
   .toolbar{display:flex; gap:8px; padding:11px 15px; flex-wrap:wrap; align-items:center;
     border-bottom:1px solid var(--line2); background:#fbfcfd}
   .toolbar .sp{flex:1}
+  .toolbar .tbl{font-size:11.5px; font-weight:700; color:var(--sub); margin-right:2px}
+  .printhint{
+    padding:8px 15px; background:#fff7ed; border-bottom:1px solid #f0d5b8;
+    font-size:11.5px; color:#8a5220; line-height:1.5;
+  }
+  .printhint b{color:#6b3f18}
   .stage{padding:14px; background:#e9edf1; overflow:auto}
   .hide{display:none !important}
 
@@ -417,11 +423,18 @@
     <!-- ==================== プレビュー ==================== -->
     <div class="panel">
       <div class="toolbar noprint">
+        <span class="tbl">画面で見る</span>
         <button type="button" class="docbtn on" data-view="all">両方</button>
         <button type="button" class="docbtn" data-view="unpan">収集・運搬用</button>
         <button type="button" class="docbtn" data-view="shobun">処分用</button>
         <span class="sp"></span>
-        <button type="button" class="primary" onclick="window.print()">印刷 / PDFで保存</button>
+        <button type="button" class="primary" id="btnPrintU">① 収集・運搬用をPDF</button>
+        <button type="button" class="primary" id="btnPrintS">② 処分用をPDF</button>
+      </div>
+      <div class="printhint noprint">
+        <b>PDFは2つに分けて保存します。</b>①→②の順にボタンを押してください。
+        押すたびに印刷画面が出るので、送信先を「PDFに保存」にして、それぞれ別のファイルとして保存します。
+        ファイル名は自動で「収集・運搬用」「処分用」が入ります。
       </div>
       <div class="stage" id="stage"></div>
     </div>
@@ -1231,14 +1244,51 @@ function render(){
     + '作る書類にチェックを入れてください</div>';
 }
 
+function setView(v){
+  view = v;
+  document.querySelectorAll('.docbtn').forEach(x => x.classList.toggle('on', x.dataset.view === v));
+  render();
+}
 document.querySelectorAll('.docbtn').forEach(b => {
-  b.addEventListener('click', () => {
-    document.querySelectorAll('.docbtn').forEach(x => x.classList.remove('on'));
-    b.classList.add('on');
-    view = b.dataset.view;
-    render();
-  });
+  b.addEventListener('click', () => setView(b.dataset.view));
 });
+
+/* ---------- 1書類ずつPDFにする ----------
+   ブラウザの印刷は1回につき1ファイルなので、表示を片方だけに切り替えてから印刷する。
+   そのあいだ document.title を差し替えると、保存ダイアログの既定ファイル名になる。 */
+function pdfName(which){
+  const d = data();
+  const kind = which === 'unpan' ? '収集・運搬用' : '処分用';
+  const who = (d.kouName || '').replace(/[\\/:*?"<>|]/g, '').trim();
+  return '産業廃棄物処理委託基本契約書（' + kind + '）' + (who ? '_' + who : '');
+}
+
+function printOne(which){
+  const box = which === 'unpan' ? 'useUnpan' : 'useShobun';
+  if(!$(box).checked){
+    alert('「作る書類」で' + (which === 'unpan' ? '収集・運搬用' : '処分用')
+      + 'にチェックが入っていません。');
+    return;
+  }
+  const prevView = view, prevTitle = document.title;
+  let done = false;
+  const restore = () => {
+    if(done) return;
+    done = true;
+    document.title = prevTitle;
+    setView(prevView);
+    window.removeEventListener('afterprint', restore);
+  };
+  setView(which);
+  document.title = pdfName(which);
+  window.addEventListener('afterprint', restore);
+  /* afterprint が飛ばないブラウザ向けの保険 */
+  setTimeout(restore, 60000);
+  /* 表示の切り替えが画面に反映されてから印刷を呼ぶ */
+  requestAnimationFrame(() => requestAnimationFrame(() => window.print()));
+}
+$('btnPrintU').addEventListener('click', () => printOne('unpan'));
+$('btnPrintS').addEventListener('click', () => printOne('shobun'));
 document.addEventListener('input', e => {
   if(e.target.closest('.panel.noprint')) render();
 });
