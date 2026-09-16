@@ -72,6 +72,19 @@
   .checks label:has(input:checked){background:var(--chip); border-color:var(--accent); font-weight:700; color:var(--accent-d)}
   .checks input{width:auto; margin:0; flex:none; accent-color:var(--accent)}
 
+  .drop{
+    border:2px dashed var(--line); border-radius:10px; background:#fbfcfd;
+    padding:16px 12px; text-align:center; cursor:pointer; color:var(--sub);
+    font-size:12.5px; line-height:1.5; transition:.15s;
+  }
+  .drop:hover,.drop.over{border-color:var(--accent); background:var(--chip); color:var(--accent-d)}
+  .drop b{display:block; font-size:13px; color:var(--ink); margin-bottom:3px}
+  .drop.over b{color:var(--accent-d)}
+  .impmsg{font-size:12px; border-radius:8px; padding:8px 11px; margin-top:8px; line-height:1.55}
+  .impmsg.ok{background:var(--chip); border:1px solid #bfe0d6; color:var(--accent-d)}
+  .impmsg.ng{background:#fdecea; border:1px solid #f3c7be; color:var(--warn)}
+  .impmsg.wait{background:#fff7ed; border:1px solid #f0d5b8; color:#8a5220}
+
   details.adv{border:1px solid var(--line2); border-radius:8px; margin-top:8px; background:#fbfcfd}
   details.adv>summary{cursor:pointer; padding:8px 11px; font-size:12px; font-weight:700; color:var(--sub)}
   details.adv .abody{padding:0 11px 11px}
@@ -212,6 +225,23 @@
       <div class="pbody">
 
         <fieldset>
+          <legend>さつきへの依頼書から読み込む</legend>
+          <div class="drop" id="drop">
+            <b>依頼書のPDFをここにドロップ</b>
+            クリックしてファイルを選ぶこともできます
+          </div>
+          <input type="file" id="pdfFile" accept="application/pdf,.pdf" style="display:none">
+          <div id="impMsg"></div>
+          <details class="adv">
+            <summary>うまく読めないときは、文字をコピーして貼り付け</summary>
+            <div class="abody">
+              <textarea id="pasteBox" placeholder="依頼書をぜんぶ選択してコピー（Ctrl+A → Ctrl+C）して、ここに貼り付けてください"></textarea>
+              <button type="button" class="mini" id="btnParseText" style="margin-top:6px">貼り付けた内容を読み込む</button>
+            </div>
+          </details>
+        </fieldset>
+
+        <fieldset>
           <legend>作る書類</legend>
           <div class="checks" style="grid-template-columns:1fr 1fr">
             <label><input type="checkbox" id="useUnpan" checked><span>収集・運搬用</span></label>
@@ -261,9 +291,11 @@
           <label class="f" style="margin-top:8px"><span class="lab">種類（上のチェックで入ります／直接書き換えもできます）</span>
             <input id="shurui" placeholder="廃プラスチック類・金属くず・ガラスくず・木くず・繊維くず"></label>
           <div class="grid" style="margin-top:9px">
-            <label class="f"><span class="lab">数量</span>
-              <input id="suryo" placeholder="約６００kg／年間"></label>
-            <label class="f"><span class="lab">輸入廃棄物</span>
+            <label class="f"><span class="lab">数量（収集・運搬用）</span>
+              <input id="suryoU" placeholder="約６００ｋｇ／年間"></label>
+            <label class="f"><span class="lab">数量（処分用）</span>
+              <input id="suryoS" placeholder="約６００ｋｇ／年間"></label>
+            <label class="f full"><span class="lab">輸入廃棄物</span>
               <select id="yunyu"><option>無</option><option>有</option></select></label>
             <label class="f full"><span class="lab">収集・運搬単価</span>
               <input id="unpanTanka" placeholder="２４，０００円／年額（２，０００円／月額）"></label>
@@ -482,7 +514,7 @@ function data(){
   return {
     kouName:g('kouName'), kouAddr:g('kouAddr'), kouTitle:g('kouTitle'), kouRep:g('kouRep'),
     genbaName:g('genbaName'), genbaAddr:g('genbaAddr'),
-    shurui:g('shurui'), suryo:g('suryo'), yunyu:g('yunyu'),
+    shurui:g('shurui'), suryoU:g('suryoU'), suryoS:g('suryoS'), yunyu:g('yunyu'),
     unpanTanka:g('unpanTanka'), shobunTanka:g('shobunTanka'),
     keiyakuDate:g('keiyakuDate'), kikanFrom:g('kikanFrom'), kikanTo:g('kikanTo'),
     otsuName:g('otsuName'), otsuAddr:g('otsuAddr'), otsuTitle:g('otsuTitle'), otsuRep:g('otsuRep'),
@@ -638,7 +670,7 @@ function renderUnpan(d){
     + '<div class="p">甲が、最終目的地に収集・運搬を委託する産業廃棄物の種類、数量及び収集・運搬単価は、次のとおりとする。</div>'
     + '<div class="box">'
     +   row('種類','16mm', d.shurui)
-    +   row('数量','16mm', d.suryo)
+    +   row('数量','16mm', d.suryoU)
     +   row('単価','16mm', d.unpanTanka)
     + '</div>'
     + '<div class="li"><span class="n">3.</span><span class="b">（輸入廃棄物の有・無）</span></div>'
@@ -804,7 +836,7 @@ function renderShobun(d){
     + '<div class="box">'
     +   '<div style="margin:1mm 0">◎処分に関する種類、数量及び委託単価</div>'
     +   row('種類','16mm', d.shurui)
-    +   row('数量','16mm', d.suryo)
+    +   row('数量','16mm', d.suryoS)
     +   row('単価','16mm', d.shobunTanka)
     + '</div>'
     + '<div class="li"><span class="n">３．</span><span class="b">（危険物混入の禁止）</span></div>'
@@ -962,6 +994,206 @@ function renderBeppyo(){
   return '<div class="doc land" id="docBeppyo">' + h + '</div>';
 }
 
+/* =========================================================================
+   さつきへの依頼書（契約書作成依頼書）を読み込んで、入力欄に流し込む。
+   依頼書のPDFは文字がCJK部首（⼤＝U+2F24 など）で入っていることがあるので、
+   解析の前に必ず NFKC 正規化する。入れる値は契約書の体裁（全角）に直す。
+   ========================================================================= */
+const PDFJS_VER = '3.11.174';
+
+async function loadPdfJs(){
+  if(window.pdfjsLib) return window.pdfjsLib;
+  await new Promise((ok, ng) => {
+    const el = document.createElement('script');
+    el.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/' + PDFJS_VER + '/pdf.min.js';
+    el.onload = ok;
+    el.onerror = () => ng(new Error('PDFを読む部品を取ってこられませんでした（ネットにつながっていますか？）'));
+    document.head.appendChild(el);
+  });
+  window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/' + PDFJS_VER + '/pdf.worker.min.js';
+  return window.pdfjsLib;
+}
+
+/* PDFから、行のまとまりを保ったまま文字を取り出す */
+async function pdfToText(file){
+  const lib = await loadPdfJs();
+  const doc = await lib.getDocument({ data: await file.arrayBuffer() }).promise;
+  const out = [];
+  for(let n = 1; n <= doc.numPages; n++){
+    const items = (await (await doc.getPage(n)).getTextContent()).items;
+    const rows = new Map();
+    items.forEach(it => {
+      const y = Math.round(it.transform[5]);
+      if(!rows.has(y)) rows.set(y, []);
+      rows.get(y).push({ x: it.transform[4], w: it.width || 0, s: it.str });
+    });
+    [...rows.keys()].sort((a, b) => b - a).forEach(y => {
+      let line = '', end = null;
+      rows.get(y).sort((a, b) => a.x - b.x).forEach(it => {
+        /* 離れていればセルの区切り＝空白、くっついていればそのままつなぐ */
+        if(end !== null && it.x - end > 3) line += ' ';
+        line += it.s;
+        end = it.x + it.w;
+      });
+      if(line.trim()) out.push(line.trim());
+    });
+  }
+  return out.join('\n');
+}
+
+/* 数字を契約書の体裁（全角・全角カンマ区切り）にする */
+function zenNum(v){
+  const n = Number(String(v).replace(/[^0-9.]/g, ''));
+  if(!isFinite(n) || !n) return '';
+  return n.toLocaleString('en-US').replace(/[0-9,]/g, c =>
+    c === ',' ? '，' : String.fromCharCode(c.charCodeAt(0) + 0xFEE0));
+}
+
+function parseIraisho(raw){
+  const lines = raw.normalize('NFKC').replace(/\r/g, '')
+    .split('\n').map(x => x.trim()).filter(Boolean);
+  /* 行頭のラベルを消して、残りを値として返す */
+  const find = re => {
+    for(const l of lines){
+      const m = l.match(re);
+      if(m){
+        const v = l.slice(m[0].length).replace(/^[\s:：=]+/, '').trim();
+        if(v) return v;
+      }
+    }
+    return '';
+  };
+  const dates = str => {
+    const out = [];
+    const re = /(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日/g;
+    let m;
+    while((m = re.exec(str))) out.push(m[1] + '-' + ('0' + m[2]).slice(-2) + '-' + ('0' + m[3]).slice(-2));
+    return out;
+  };
+  /* 「月10kg 年間 120kg」→ 約１２０ｋｇ／年間 */
+  const ryo = str => {
+    const y = str.match(/年\s*間?\s*([\d,]+)\s*(kg|t|トン)/i);
+    if(y) return '約' + zenNum(y[1]) + (/t|トン/i.test(y[2]) ? 'ｔ' : 'ｋｇ') + '／年間';
+    return str;
+  };
+  /* 「月800円 年間9600円」→ ９，６００円／年額（８００円／月額） */
+  const tanka = str => {
+    const y = str.match(/年\s*間?\s*額?\s*([\d,]+)\s*円/);
+    const m = str.match(/月\s*額?\s*([\d,]+)\s*円/);
+    if(y && m) return zenNum(y[1]) + '円／年額（' + zenNum(m[1]) + '円／月額）';
+    if(y) return zenNum(y[1]) + '円／年額';
+    if(m) return zenNum(m[1]) + '円／月額';
+    return str;
+  };
+  /* チェックの付いた種類だけ拾う */
+  const shuruiOf = str => {
+    let items = (str.match(/[☑☒✓✔■●][^\s☐☑☒✓✔■●□]+/g) || []).map(x => x.slice(1));
+    if(!items.length) items = str.split(/[\s、,・]+/).filter(Boolean);
+    return items.map(x => x.replace(/^廃プラスチック$/, '廃プラスチック類'))
+      .filter(Boolean).join('・');
+  };
+
+  const kikan = dates(find(/^契約期間/));
+  const teiketsu = dates(find(/^契約締結日/));
+  let rep = find(/^代表取締役/) || find(/^代表者/);
+  let title = '';
+  const mt = rep.match(/^(代表取締役社長|代表取締役|取締役|代表社員|代表者|社長)\s*(.+)$/);
+  if(mt){ title = mt[1]; rep = mt[2].trim(); }
+
+  return {
+    kouName:     find(/^排出事業者名/),
+    kouAddr:     find(/^排出事業者住所/),
+    kouTitle:    title,
+    kouRep:      rep,
+    genbaName:   find(/^排出事業場名/),
+    genbaAddr:   find(/^排出事業場住所/),
+    shurui:      shuruiOf(find(/^契約種類/)),
+    suryoU:      ryo(find(/^契約書?数量\(?収運/)),
+    suryoS:      ryo(find(/^契約書?数量\(?処分/)),
+    unpanTanka:  tanka(find(/^契約単価\(?収運/)),
+    shobunTanka: tanka(find(/^契約単価\(?処分/)),
+    kikanFrom:   kikan[0] || '',
+    kikanTo:     kikan[1] || '',
+    keiyakuDate: teiketsu[0] || '',
+    _satsuki:    /さつき/.test(raw)
+  };
+}
+
+const IMPORT_LABEL = {
+  kouName:'排出事業者名', kouAddr:'排出事業者住所', kouTitle:'代表者役職', kouRep:'代表者氏名',
+  genbaName:'事業場名', genbaAddr:'事業場所在地', shurui:'種類',
+  suryoU:'数量(収運)', suryoS:'数量(処分)', unpanTanka:'収集運搬単価',
+  shobunTanka:'処分単価', kikanFrom:'契約開始日', kikanTo:'契約終了日', keiyakuDate:'契約日'
+};
+
+function applyIraisho(v){
+  const filled = [];
+  Object.keys(IMPORT_LABEL).forEach(k => {
+    if(v[k] && $(k)){ $(k).value = v[k]; filled.push(IMPORT_LABEL[k]); }
+  });
+  if(v.kikanTo) $('kikanTo').dataset.touched = '1';
+  if(v._satsuki) $('preset').value = 'satsuki';
+  /* 種類のチェックも合わせておく */
+  const set = new Set((v.shurui || '').split('・'));
+  document.querySelectorAll('[data-shurui]').forEach(c => { c.checked = set.has(c.dataset.shurui); });
+  render();
+  return filled;
+}
+
+function impMsg(cls, html){
+  $('impMsg').innerHTML = '<div class="impmsg ' + cls + '">' + html + '</div>';
+}
+
+function importFromText(text, name){
+  const filled = applyIraisho(parseIraisho(text));
+  if(!filled.length){
+    impMsg('ng', '依頼書の項目を読み取れませんでした。書式が違うかもしれません。');
+    return;
+  }
+  impMsg('ok', '<b>' + esc(name || '貼り付けた内容') + '</b> から ' + filled.length
+    + '項目を入れました（' + esc(filled.join('・')) + '）。<br>'
+    + '数量と単価は契約書の書き方に直してあります。右のプレビューで確認してください。');
+}
+
+async function importFromFile(file){
+  if(!file) return;
+  if(!/\.pdf$/i.test(file.name) && file.type !== 'application/pdf'){
+    impMsg('ng', 'PDFファイルを入れてください。');
+    return;
+  }
+  impMsg('wait', '読み込んでいます…');
+  try{
+    const text = await pdfToText(file);
+    if(text.replace(/\s/g, '').length < 20){
+      impMsg('ng', 'この依頼書は文字が入っていない（スキャンした画像の）PDFのようです。'
+        + '下の「うまく読めないときは」から文字を貼り付けてください。');
+      return;
+    }
+    importFromText(text, file.name);
+  }catch(e){
+    impMsg('ng', esc(String(e && e.message ? e.message : e)));
+  }
+}
+
+(function initImport(){
+  const dz = $('drop'), fi = $('pdfFile');
+  dz.addEventListener('click', () => fi.click());
+  fi.addEventListener('change', () => { importFromFile(fi.files[0]); fi.value = ''; });
+  ['dragenter', 'dragover'].forEach(ev => dz.addEventListener(ev, e => {
+    e.preventDefault(); dz.classList.add('over');
+  }));
+  ['dragleave', 'drop'].forEach(ev => dz.addEventListener(ev, e => {
+    e.preventDefault(); dz.classList.remove('over');
+  }));
+  dz.addEventListener('drop', e => importFromFile(e.dataTransfer.files[0]));
+  $('btnParseText').addEventListener('click', () => {
+    const t = $('pasteBox').value.trim();
+    if(!t){ impMsg('ng', '貼り付ける内容がありません。'); return; }
+    importFromText(t, '');
+  });
+})();
+
 /* ---------- 許可証の写し ----------
    スキャン画像は kyoka/ フォルダに置いてある。許可が更新されたら
    同じファイル名で入れ替えれば、ツール側の修正は要らない。 */
@@ -1018,7 +1250,7 @@ document.addEventListener('change', e => {
 const KEY = 'daisen_sanpai_keiyaku_v1';
 function allFields(){
   return [...document.querySelectorAll('.panel.noprint input, .panel.noprint select')]
-    .filter(el => el.id);
+    .filter(el => el.id && el.type !== 'file');
 }
 $('btnSave').addEventListener('click', () => {
   const o = {};
@@ -1040,7 +1272,7 @@ $('btnLoad').addEventListener('click', () => {
 });
 $('btnClear').addEventListener('click', () => {
   if(!confirm('入力した内容を全部消します。よろしいですか？')) return;
-  ['kouName','kouAddr','kouRep','genbaName','genbaAddr','shurui','suryo',
+  ['kouName','kouAddr','kouRep','genbaName','genbaAddr','shurui','suryoU','suryoS',
    'unpanTanka','shobunTanka','keiyakuDate','kikanFrom','kikanTo'].forEach(id => $(id).value = '');
   document.querySelectorAll('[data-shurui]').forEach(c => c.checked = false);
   delete $('kikanTo').dataset.touched;
