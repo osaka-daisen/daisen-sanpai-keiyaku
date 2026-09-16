@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#1f6f5c">
+<title>産業廃棄物 処理委託基本契約書メーカー（社内用）｜大泉衛生</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --sub:#5b6470; --line:#d9dee5; --line2:#eef1f5;
+    --bg:#f4f6f9; --card:#fff; --accent:#1f6f5c; --accent-d:#155445;
+    --warn:#b4451f; --chip:#eef4f2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",system-ui,sans-serif;
+    font-size:14px; line-height:1.6; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:1300px; margin:0 auto; padding:16px 16px 70px}
+
+  header.app{
+    display:flex; align-items:center; gap:13px; flex-wrap:wrap;
+    padding:13px 17px; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; margin-bottom:14px;
+  }
+  header.app .logo{
+    width:40px; height:40px; border-radius:9px; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:17px; flex:none;
+  }
+  header.app h1{font-size:16px; margin:0}
+  header.app .sub{font-size:11.5px; color:var(--sub); margin-top:2px}
+  header.app .spacer{flex:1}
+  .badge{font-size:11px; font-weight:700; background:#fdecea; color:var(--warn);
+    border:1px solid #f3c7be; border-radius:999px; padding:3px 11px}
+
+  .layout{display:grid; grid-template-columns:minmax(0,420px) minmax(0,1fr); gap:14px; align-items:start}
+  @media (max-width:1040px){ .layout{grid-template-columns:1fr} }
+
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  .panel > .phead{
+    padding:10px 15px; border-bottom:1px solid var(--line2); background:#fbfcfd;
+    font-weight:700; font-size:12.5px; color:var(--sub); display:flex; align-items:center; gap:8px;
+  }
+  .panel .pbody{padding:14px 15px}
+
+  fieldset{border:none; margin:0 0 16px; padding:0}
+  fieldset:last-child{margin-bottom:0}
+  legend{
+    font-size:11.5px; font-weight:700; color:var(--accent-d);
+    background:var(--chip); border-radius:999px; padding:3px 11px; margin-bottom:9px;
+  }
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:9px 10px}
+  .grid .full{grid-column:1/-1}
+  @media (max-width:560px){ .grid{grid-template-columns:1fr} }
+  label.f{display:block}
+  label.f .lab{display:block; font-size:11.5px; color:var(--sub); font-weight:700; margin-bottom:3px}
+  input,select,textarea{
+    width:100%; padding:8px 9px; border:1px solid var(--line); border-radius:7px;
+    font:inherit; font-size:13px; background:#fff; color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{outline:2px solid #bfe0d6; border-color:var(--accent)}
+  textarea{resize:vertical; min-height:52px}
+  .hint{font-size:11px; color:var(--sub); margin-top:4px}
+  .note{font-size:11.5px; color:var(--sub); background:#fbfcfd; border:1px solid var(--line2);
+    border-radius:8px; padding:8px 10px; margin-top:8px; line-height:1.55}
+
+  .checks{display:grid; grid-template-columns:repeat(auto-fill,minmax(112px,1fr)); gap:6px}
+  .checks label{display:flex; align-items:center; gap:6px; padding:6px 8px; font-size:12px;
+    border:1px solid var(--line); border-radius:7px; background:#fff; cursor:pointer}
+  .checks label:has(input:checked){background:var(--chip); border-color:var(--accent); font-weight:700; color:var(--accent-d)}
+  .checks input{width:auto; margin:0; flex:none; accent-color:var(--accent)}
+
+  details.adv{border:1px solid var(--line2); border-radius:8px; margin-top:8px; background:#fbfcfd}
+  details.adv>summary{cursor:pointer; padding:8px 11px; font-size:12px; font-weight:700; color:var(--sub)}
+  details.adv .abody{padding:0 11px 11px}
+
+  button{font:inherit; font-size:13px; cursor:pointer; border:1px solid var(--line);
+    background:#fff; color:var(--ink); border-radius:8px; padding:9px 15px; font-weight:700}
+  button:hover{background:#f7f9fa}
+  button.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  button.primary:hover{background:var(--accent-d)}
+  button.mini{padding:5px 10px; font-size:11.5px}
+  .docbtn{padding:7px 13px !important; font-size:12.5px !important}
+  .docbtn.on{background:var(--accent) !important; border-color:var(--accent) !important; color:#fff !important}
+
+  .toolbar{display:flex; gap:8px; padding:11px 15px; flex-wrap:wrap; align-items:center;
+    border-bottom:1px solid var(--line2); background:#fbfcfd}
+  .toolbar .sp{flex:1}
+  .stage{padding:14px; background:#e9edf1; overflow:auto}
+  .hide{display:none !important}
+
+  /* ======================================================================
+     契約書本体（A4縦・明朝体）
+     元の雛形（ジョエルロティ様の契約書）と同じ体裁・同じ条文で作っている。
+     画面では 0.62 倍に縮めて表示し、印刷のときだけ原寸に戻す。
+     ====================================================================== */
+  @page{ size:A4; margin:20mm 20mm 18mm; }
+
+  .doc{
+    width:210mm; margin:0 auto 14px; background:#fff; color:#000;
+    padding:20mm; box-shadow:0 1px 6px rgba(0,0,0,.14);
+    font-family:"Yu Mincho","YuMincho","Hiragino Mincho ProN","MS PMincho","MS Mincho",serif;
+    font-size:10.5pt; line-height:1.68; letter-spacing:.01em;
+    zoom:.62;
+  }
+  .doc .title{font-size:16pt; text-align:center; letter-spacing:.5em; margin:0 0 4mm; text-indent:.5em}
+  .doc .kind{font-size:12pt; text-align:right; letter-spacing:.35em; margin:0 0 9mm}
+
+  /* 記入欄（下線） */
+  .doc .fill{
+    display:inline-block; border-bottom:1px solid #000; text-align:center; padding:0 2mm;
+    font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+    font-size:10pt; min-height:1.4em; white-space:nowrap;
+  }
+  .doc .fill.grow{flex:1 1 auto; min-width:0; white-space:normal; word-break:break-word}
+  .doc .row{display:flex; align-items:flex-end; gap:0; margin:0 0 1.2mm; min-width:0}
+  .doc .row .lb{
+    display:inline-block; text-align:justify; text-align-last:justify; flex:none;
+    white-space:nowrap;
+  }
+  .doc .row .tail{flex:none; padding-left:2mm; white-space:nowrap}
+
+  .doc .lead{margin:0 0 1.5mm}
+  .doc .lead .ind{margin-left:6mm}
+  .doc .cont{margin:0 0 8mm; text-align:justify}
+
+  .doc .art{margin:0 0 4mm}
+  .doc .ah{margin:0 0 .6mm}
+  .doc .p{margin:0 0 .6mm; padding-left:5mm; text-indent:1em; text-align:justify}
+  .doc .p.noind{text-indent:0}
+  .doc .li{display:flex; margin:0 0 .6mm; padding-left:5mm; text-align:justify}
+  .doc .li>.n{flex:none; width:6mm}
+  .doc .li>.b{flex:1; min-width:0; text-align:justify}
+  .doc .li>.b.fx{display:flex; align-items:flex-end; text-align:left}
+  .doc .li.d2{padding-left:11mm}
+  .doc .li.d3{padding-left:17mm}
+  .doc .li>.n.w2{width:9mm}
+  .doc .box{padding-left:11mm; margin:1.5mm 0 2.5mm}
+  .doc .box .row{margin-bottom:1.4mm}
+  .doc .two{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:0 6mm}
+  .doc .two .hd{text-align:center; margin:0 0 .8mm}
+  .doc .two.cols{gap:0 5mm}
+  .doc .two.cols .row .lb{width:37mm !important}
+  .doc .two.cols .fill{font-size:9pt; padding:0 1mm; min-width:0}
+  .doc .sign{margin-top:8mm; break-inside:avoid; page-break-inside:avoid}
+  .doc .closeblk{break-inside:avoid; page-break-inside:avoid}
+  .doc .sign .l1{margin:0 0 1mm; letter-spacing:.15em}
+  .doc .sign .l2{margin:0 0 1mm; padding-left:16mm; letter-spacing:.3em; font-size:12pt}
+  .doc .sign .l3{margin:0 0 8mm; padding-left:16mm; letter-spacing:.4em; font-size:12pt}
+  .doc .date{margin:6mm 0 0; padding-left:6mm; letter-spacing:.15em}
+
+  /* 許可証の写し（スキャン画像を1ページ1枚で貼る） */
+  .doc.attach{padding:20mm; display:flex; align-items:flex-start; justify-content:center}
+  .doc.attach img{width:100%; height:auto; display:block}
+  @media print{ .doc.attach{padding:0} }
+
+  /* 別表1 */
+  .doc.land{width:297mm; zoom:.41}
+  .doc .bt{font-size:13pt; text-align:center; margin:0 0 4mm; letter-spacing:.15em}
+  .doc table.bp{width:100%; border-collapse:collapse; table-layout:fixed;
+    font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;}
+  .doc table.bp th,.doc table.bp td{
+    border:1px solid #000; padding:1mm 1.2mm; font-size:8pt; line-height:1.35;
+    text-align:center; vertical-align:middle; word-break:break-all;
+  }
+  .doc table.bp th{font-weight:400; font-size:8.5pt}
+  .doc table.bp td.sm{font-size:6.6pt}
+  .doc .bpfoot{text-align:right; font-size:9pt; margin-top:1.5mm;
+    font-family:"Yu Gothic","Meiryo",sans-serif}
+
+  @media print{
+    body{background:#fff}
+    .noprint{display:none !important}
+    .wrap{max-width:none; padding:0}
+    .layout{display:block}
+    .panel{border:none; border-radius:0; overflow:visible}
+    .stage{padding:0; background:#fff}
+    .doc{width:auto; margin:0; padding:0; box-shadow:none; zoom:1}
+    .doc + .doc{page-break-before:always}
+    /* 別表1だけ横向きで刷る */
+    /* 別表1は横長。本文257mm を 170mm に収める（257×.66≒169.6mm） */
+    .doc.land{width:257mm; padding:0; zoom:.66}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="app noprint">
+    <div class="logo">大泉</div>
+    <div>
+      <h1>産業廃棄物 処理委託基本契約書メーカー</h1>
+      <div class="sub">収集・運搬用／処分用の基本契約書を、既存の雛形どおりに作成して印刷・PDF保存できます</div>
+    </div>
+    <div class="spacer"></div>
+    <span class="badge">社内用</span>
+  </header>
+
+  <div class="layout">
+
+    <!-- ==================== 入力 ==================== -->
+    <div class="panel noprint">
+      <div class="phead">
+        入力
+        <span style="flex:1"></span>
+        <button type="button" class="mini" id="btnSave">保存</button>
+        <button type="button" class="mini" id="btnLoad">呼び出す</button>
+        <button type="button" class="mini" id="btnClear">全部消す</button>
+      </div>
+      <div class="pbody">
+
+        <fieldset>
+          <legend>作る書類</legend>
+          <div class="checks" style="grid-template-columns:1fr 1fr">
+            <label><input type="checkbox" id="useUnpan" checked><span>収集・運搬用</span></label>
+            <label><input type="checkbox" id="useShobun" checked><span>処分用</span></label>
+          </div>
+          <label class="f" style="margin-top:9px"><span class="lab">契約のしかた</span>
+            <select id="keiyakuType">
+              <option value="oin">押印版（紙に印刷して記名押印）</option>
+              <option value="denshi">電子契約版（GMOサインなどで電子署名）</option>
+            </select></label>
+          <label class="f hide" id="serviceWrap" style="margin-top:9px"><span class="lab">電子契約サービス名</span>
+            <input id="service" value="電子印鑑GMOサイン"></label>
+          <label class="f" style="margin-top:9px"><span class="lab">許可証の写し</span>
+            <select id="useKyoka">
+              <option value="1">契約書の後ろに付ける</option>
+              <option value="0">付けない（別途スキャンを付ける）</option>
+            </select></label>
+          <div class="note">
+            処分用は<b>甲（お客様）と処分業者の契約</b>です。大泉衛生は搬入業者として名前が入ります。<br>
+            許可証の写しは<b>大泉衛生の収集運搬業許可証</b>（令和10年11月5日まで）と、
+            委託先が<b>さつき</b>のときは<b>さつきの処分業許可証</b>（令和15年6月10日まで）が自動で付きます。
+            許可が更新されたら <code>kyoka/</code> の画像を同じファイル名で差し替えてください。
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>排出事業者（甲）</legend>
+          <div class="grid">
+            <label class="f full"><span class="lab">会社名</span>
+              <input id="kouName" placeholder="例）株式会社○○商事"></label>
+            <label class="f full"><span class="lab">本店所在地</span>
+              <input id="kouAddr" placeholder="例）大阪市○○区○○1丁目2番3号"></label>
+            <label class="f"><span class="lab">代表者 役職</span>
+              <input id="kouTitle" value="代表取締役"></label>
+            <label class="f"><span class="lab">代表者 氏名</span>
+              <input id="kouRep" placeholder="例）山田 太郎"></label>
+            <label class="f full"><span class="lab">甲の事業場（名称）</span>
+              <input id="genbaName" placeholder="例）○○商事 ○○工場"></label>
+            <label class="f full"><span class="lab">甲の事業場（所在地）</span>
+              <input id="genbaAddr" placeholder="例）大阪市○○区○○3-20-16"></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>委託する産業廃棄物</legend>
+          <div class="checks" id="shuruiBox"></div>
+          <label class="f" style="margin-top:8px"><span class="lab">種類（上のチェックで入ります／直接書き換えもできます）</span>
+            <input id="shurui" placeholder="廃プラスチック類・金属くず・ガラスくず・木くず・繊維くず"></label>
+          <div class="grid" style="margin-top:9px">
+            <label class="f"><span class="lab">数量</span>
+              <input id="suryo" placeholder="約６００kg／年間"></label>
+            <label class="f"><span class="lab">輸入廃棄物</span>
+              <select id="yunyu"><option>無</option><option>有</option></select></label>
+            <label class="f full"><span class="lab">収集・運搬単価</span>
+              <input id="unpanTanka" placeholder="２４，０００円／年額（２，０００円／月額）"></label>
+            <label class="f full"><span class="lab">処分単価（税別）</span>
+              <input id="shobunTanka" placeholder="７２，０００円／年額（６，０００円／月額）"></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>契約日・契約期間</legend>
+          <div class="grid">
+            <label class="f full"><span class="lab">契約日</span>
+              <input type="date" id="keiyakuDate"></label>
+            <label class="f"><span class="lab">契約開始日</span>
+              <input type="date" id="kikanFrom"></label>
+            <label class="f"><span class="lab">契約終了日（自動）</span>
+              <input type="date" id="kikanTo"></label>
+          </div>
+          <div class="hint">開始日を入れると、1年後の前日が終了日に入ります（手で直せます）。</div>
+        </fieldset>
+
+        <fieldset>
+          <legend>収集・運搬業者（乙）</legend>
+          <div class="grid">
+            <label class="f full"><span class="lab">会社名</span>
+              <input id="otsuName" value="大泉衛生株式会社"></label>
+            <label class="f full"><span class="lab">所在地</span>
+              <input id="otsuAddr" value="大阪市東住吉区東田辺三丁目26番31号"></label>
+            <label class="f"><span class="lab">代表者 役職</span>
+              <input id="otsuTitle" value="代表取締役"></label>
+            <label class="f"><span class="lab">代表者 氏名</span>
+              <input id="otsuRep" value="木村 元"></label>
+            <label class="f"><span class="lab">許可（積込地）</span>
+              <input id="otsuPref1" value="大阪府"></label>
+            <label class="f"><span class="lab">許可（最終目的地）</span>
+              <input id="otsuPref2" value="大阪府"></label>
+            <label class="f full"><span class="lab">許可番号</span>
+              <input id="otsuKyokaNo" value="第02700173953号"></label>
+            <label class="f full"><span class="lab">積替保管</span>
+              <select id="tsumikae">
+                <option value="nashi">積替えを行わない</option>
+                <option value="ari">積替えを行う（別途記載）</option>
+              </select></label>
+          </div>
+          <div class="hint">許可の有効期限・事業範囲・許可の条件は雛形どおり「許可証の写しのとおり」で入ります。</div>
+        </fieldset>
+
+        <fieldset>
+          <legend>処分業者（＝運搬の最終目的地）</legend>
+          <label class="f"><span class="lab">よく使う委託先</span>
+            <select id="preset">
+              <option value="satsuki">株式会社さつき</option>
+              <option value="free">自分で入力する</option>
+            </select></label>
+          <div class="grid" style="margin-top:9px">
+            <label class="f full"><span class="lab">会社名</span>
+              <input id="sName" value="株式会社 さつき"></label>
+            <label class="f"><span class="lab">代表者 役職</span>
+              <input id="sTitle" value="代表取締役"></label>
+            <label class="f"><span class="lab">代表者 氏名</span>
+              <input id="sRep" value="皐月 篤"></label>
+            <label class="f full"><span class="lab">住所</span>
+              <input id="sAddr" value="大阪市大正区鶴町四丁目12番27号"></label>
+            <label class="f"><span class="lab">許可都道府県・政令市</span>
+              <input id="sPref" value="大阪市"></label>
+            <label class="f"><span class="lab">許可番号</span>
+              <input id="sKyokaNo" value="第6620046625号"></label>
+            <label class="f"><span class="lab">事業の区分</span>
+              <input id="sKubun" value="中間処理"></label>
+            <label class="f"><span class="lab">許可の有効期限</span>
+              <input id="sLimit" value="許可証の写しのとおり"></label>
+            <label class="f full"><span class="lab">事業場の名称</span>
+              <input id="sJigyoName" value="株式会社 さつき"></label>
+            <label class="f full"><span class="lab">事業場の所在地</span>
+              <input id="sJigyoAddr" value="大阪市大正区鶴町四丁目12番27号"></label>
+            <label class="f"><span class="lab">処分の方法</span>
+              <input id="sHouhou" value="①破砕　　②減容固化"></label>
+            <label class="f"><span class="lab">施設の処理能力</span>
+              <input id="sNouryoku" value="①８．５㎥／日　②０．４t／日"></label>
+            <label class="f full"><span class="lab">別表1（最終処分先一覧）</span>
+              <select id="useBeppyo">
+                <option value="1">付ける（さつきの一覧）</option>
+                <option value="0">付けない</option>
+              </select></label>
+          </div>
+        </fieldset>
+
+        <details class="adv">
+          <summary>適正処理に必要な情報（第3条）を変える</summary>
+          <div class="abody">
+            <div class="grid">
+              <label class="f full"><span class="lab">ア 発生工程</span>
+                <input id="infoA" value="事業活動に伴って発生した不要物"></label>
+              <label class="f full"><span class="lab">イ 性状及び荷姿</span>
+                <input id="infoI" value="性状：固形　荷姿：袋、バラ、カートン"></label>
+              <label class="f"><span class="lab">ウ 腐敗・揮発等</span>
+                <input id="infoU" value="該当なし"></label>
+              <label class="f"><span class="lab">エ 混合等の支障</span>
+                <input id="infoE" value="該当なし"></label>
+              <label class="f"><span class="lab">オ 含有マーク</span>
+                <input id="infoO" value="該当なし"></label>
+              <label class="f"><span class="lab">カ 石綿・水銀等</span>
+                <input id="infoKa" value="該当なし"></label>
+              <label class="f"><span class="lab">キ 第1種指定化学物質</span>
+                <input id="infoKi" value="該当なし"></label>
+              <label class="f"><span class="lab">ク その他注意事項</span>
+                <input id="infoKu" value="特記事項なし"></label>
+              <label class="f"><span class="lab">分析の種類（第3条5項）</span>
+                <input id="bunsekiShurui" value="第2条2項の種類"></label>
+              <label class="f"><span class="lab">提示する時期又は回数</span>
+                <input id="bunsekiJiki" value="乙の必要に応じて"></label>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- ==================== プレビュー ==================== -->
+    <div class="panel">
+      <div class="toolbar noprint">
+        <button type="button" class="docbtn on" data-view="all">両方</button>
+        <button type="button" class="docbtn" data-view="unpan">収集・運搬用</button>
+        <button type="button" class="docbtn" data-view="shobun">処分用</button>
+        <span class="sp"></span>
+        <button type="button" class="primary" onclick="window.print()">印刷 / PDFで保存</button>
+      </div>
+      <div class="stage" id="stage"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* =========================================================================
+   産業廃棄物 処理委託基本契約書メーカー
+   条文は既存の雛形（ジョエルロティ様 収集・運搬用／処分用）をそのまま使っている。
+   条文を直すときは下の TXT ではなく、render 関数の中の文章を直接直すこと。
+   ========================================================================= */
+
+const $ = id => document.getElementById(id);
+
+/* 種類のチェックボックス（大泉衛生の収集運搬業許可 16種類） */
+const SHURUI = ['燃え殻','汚泥','廃油','廃酸','廃アルカリ','廃プラスチック類','紙くず','木くず',
+  '繊維くず','動植物性残さ','ゴムくず','金属くず','ガラスくず','鉱さい','がれき類','ばいじん'];
+
+SHURUI.forEach((s,i) => {
+  const l = document.createElement('label');
+  l.innerHTML = '<input type="checkbox" data-shurui="' + s + '"><span>' + s + '</span>';
+  $('shuruiBox').appendChild(l);
+});
+$('shuruiBox').addEventListener('change', () => {
+  const on = [...document.querySelectorAll('[data-shurui]:checked')].map(c => c.dataset.shurui);
+  if(on.length) $('shurui').value = on.join('・');
+  render();
+});
+
+/* 委託先プリセット */
+const PRESETS = {
+  satsuki:{
+    sName:'株式会社 さつき', sTitle:'代表取締役', sRep:'皐月 篤',
+    sAddr:'大阪市大正区鶴町四丁目12番27号', sPref:'大阪市', sKyokaNo:'第6620046625号',
+    sKubun:'中間処理', sLimit:'許可証の写しのとおり',
+    sJigyoName:'株式会社 さつき', sJigyoAddr:'大阪市大正区鶴町四丁目12番27号',
+    sHouhou:'①破砕　　②減容固化', sNouryoku:'①８．５㎥／日　②０．４t／日'
+  }
+};
+$('preset').addEventListener('change', e => {
+  const p = PRESETS[e.target.value];
+  if(p){ Object.keys(p).forEach(k => { if($(k)) $(k).value = p[k]; }); render(); }
+});
+
+/* ---------- 日付（令和） ---------- */
+function wareki(iso){
+  if(!iso) return null;
+  const [Y,M,D] = iso.split('-').map(Number);
+  if(!Y) return null;
+  // 令和は2019年5月1日から。この契約書で扱う範囲では令和で問題ない
+  const n = Y - 2018;
+  return { y: n === 1 ? '元' : String(n), m: String(M), d: String(D) };
+}
+function wStr(iso, pad){
+  const w = wareki(iso);
+  if(!w) return { y:'　　', m:'　　', d:'　　' };
+  return w;
+}
+$('kikanFrom').addEventListener('change', () => {
+  if($('kikanFrom').value && !$('kikanTo').dataset.touched){
+    const d = new Date($('kikanFrom').value);
+    d.setFullYear(d.getFullYear() + 1);
+    d.setDate(d.getDate() - 1);
+    $('kikanTo').value = d.toISOString().slice(0,10);
+  }
+  render();
+});
+$('kikanTo').addEventListener('input', () => { $('kikanTo').dataset.touched = '1'; });
+
+/* ---------- 表示用ヘルパー ---------- */
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+/* 記入欄（下線）。幅は mm 指定、grow を渡すと右端まで伸びる */
+function fill(v, w){
+  const val = esc(v) || '　';
+  if(w === 'grow') return '<span class="fill grow">' + val + '</span>';
+  return '<span class="fill" style="min-width:' + w + '">' + val + '</span>';
+}
+/* 均等割り付けラベル付きの1行 */
+function row(label, w, v, tail, fillW){
+  return '<div class="row"><span class="lb" style="width:' + w + '">' + esc(label) + '</span>'
+    + '：' + fill(v, fillW || 'grow')
+    + (tail ? '<span class="tail">' + tail + '</span>' : '') + '</div>';
+}
+
+function data(){
+  const g = id => ($(id) ? $(id).value.trim() : '');
+  return {
+    kouName:g('kouName'), kouAddr:g('kouAddr'), kouTitle:g('kouTitle'), kouRep:g('kouRep'),
+    genbaName:g('genbaName'), genbaAddr:g('genbaAddr'),
+    shurui:g('shurui'), suryo:g('suryo'), yunyu:g('yunyu'),
+    unpanTanka:g('unpanTanka'), shobunTanka:g('shobunTanka'),
+    keiyakuDate:g('keiyakuDate'), kikanFrom:g('kikanFrom'), kikanTo:g('kikanTo'),
+    otsuName:g('otsuName'), otsuAddr:g('otsuAddr'), otsuTitle:g('otsuTitle'), otsuRep:g('otsuRep'),
+    otsuPref1:g('otsuPref1'), otsuPref2:g('otsuPref2'), otsuKyokaNo:g('otsuKyokaNo'),
+    tsumikae:g('tsumikae'),
+    sName:g('sName'), sTitle:g('sTitle'), sRep:g('sRep'), sAddr:g('sAddr'), sPref:g('sPref'),
+    sKyokaNo:g('sKyokaNo'), sKubun:g('sKubun'), sLimit:g('sLimit'),
+    sJigyoName:g('sJigyoName'), sJigyoAddr:g('sJigyoAddr'), sHouhou:g('sHouhou'), sNouryoku:g('sNouryoku'),
+    infoA:g('infoA'), infoI:g('infoI'), infoU:g('infoU'), infoE:g('infoE'),
+    infoO:g('infoO'), infoKa:g('infoKa'), infoKi:g('infoKi'), infoKu:g('infoKu'),
+    bunsekiShurui:g('bunsekiShurui'), bunsekiJiki:g('bunsekiJiki'),
+    denshi:$('keiyakuType').value === 'denshi', service:g('service'),
+    useBeppyo:$('useBeppyo').value === '1'
+  };
+}
+
+/* 第3条 適正処理に必要な情報（収集運搬・処分で共通。項目記号だけ違う） */
+function joho3(d){
+  /* 短い項目は flex にして、記入欄の下線が右端まで伸びるようにする。
+     長い項目（オ・カ・キ）は文章が折り返すので、下線は固定幅で最終行に置く。 */
+  const sh = (mark, label, val) =>
+    '<div class="li d2"><span class="n">' + mark + '</span><span class="b fx">' + label
+    + fill(val,'grow') + '</span></div>';
+  const lg = (mark, label, val) =>
+    '<div class="li d2"><span class="n">' + mark + '</span><span class="b">' + label
+    + fill(val,'62mm') + '</span></div>';
+  return ''
+  + sh('ア','産業廃棄物の発生工程', d.infoA)
+  + sh('イ','産業廃棄物の性状及び荷姿', d.infoI)
+  + sh('ウ','腐敗、揮発等性状の変化に関する事項', d.infoU)
+  + sh('エ','混合等により生ずる支障', d.infoE)
+  + lg('オ','日本工業規格Ｃ０９５０号に規定する含有マークが付された廃製品の場合には、含有マーク表示に関する事項', d.infoO)
+  + lg('カ','石綿含有産業廃棄物又は特定産業廃棄物、水銀仕様製品産業廃棄物又は水銀含有ばいじん等が含まれる場合は、その事項', d.infoKa)
+  + lg('キ','特定化学物質の環境への排出量の把握等及び管理の改善の促進に関する法律第２条第５項に規定する第１種指定化学物質等取扱事業者である場合であって、かつ、委託する産業廃棄物に同条第２項に規定する第１種指定化学物質が含まれ、又は付着している場合には、その旨並びに当該産業廃棄物に含まれ、又は付着している当該物質の名称及び量又は割合', d.infoKi)
+  + sh('ク','その他取扱いの注意事項', d.infoKu);
+}
+
+/* 第12条 反社会的勢力の排除（収集運搬・処分で同文） */
+function art12(){
+  const items = [
+    '乙が暴力団、暴力団員、暴力団関係者、総会屋、その他の反社会的勢力（以下「暴力団等」という。）である場合、または暴力団等であった場合。',
+    '乙の代表者、責任者もしくは実質的に経営権を有する者が暴力団等である場合、または暴力団等であった場合。',
+    '乙または乙の代表者、責任者もしくは実質的に経営権を有する者が暴力団等への資金提供を行なった場合、または暴力団等と密接な交際がある場合。',
+    '乙または乙の代表者、責任者もしくは実質的に経営権を有する者が暴力的ないし威迫的な犯罪行為を行なったとして公に認識され、もしくは報道その他により一般に認識された者である場合、またはこの者とかかわり、つながりのある者である場合。',
+    '乙が本契約の履行のために契約する者が前４号のいずれかに該当する場合。',
+    '乙が自らまたは第三者を利用して、甲に対して、自身が暴力団等である旨を伝え、または乙の関係者が暴力団等である旨を伝えた場合。',
+    '乙が自らまたは第三者を利用して、甲に対して詐術、暴力的行為、または脅迫的言辞を用いた場合。',
+    '乙が自らまたは第三者を利用して、甲の名誉や信用等を毀損するおそれのある行為をした場合。',
+    '乙が自らまたは第三者を利用して、甲の業務を妨害しまたは妨害するおそれのある行為をした場合。'
+  ];
+  return items.map((t,i) =>
+    '<div class="li d2"><span class="n w2">（' + (i+1) + '）</span><span class="b">' + t + '</span></div>'
+  ).join('');
+}
+
+/* 第16条（電子契約）。電子契約版のときだけ足す。
+   処分用は大泉衛生が当事者ではないので、締結手続を大泉衛生が行うことを3項で明記する。 */
+function art16(d, isShobun){
+  if(!d.denshi) return '';
+  const n = isShobun ? ['１．','２．','３．'] : ['1.','2.','3.'];
+  const li = (num, t) => '<div class="li"><span class="n' + (isShobun ? ' w2' : '') + '">' + num
+    + '</span><span class="b">' + t + '</span></div>';
+  const sv = esc(d.service) || '電子契約サービス';
+  let h = '<div class="art"><div class="ah">第１６条（電子契約）</div>'
+    + li(n[0], '甲及び乙は、本契約を電子契約サービス「' + sv + '」を利用し、電磁的記録により締結することに合意する。')
+    + li(n[1], '甲及び乙は、本契約書の電磁的記録に電子署名を行うものとし、当該電磁的記録をもって本契約書の原本とする。');
+  if(isShobun){
+    h += li(n[2], '本契約の締結に係る事務手続（電磁的記録の送信及び署名依頼を含む。）は、甲及び乙の合意に基づき、'
+      + '第２条第７項の搬入業者（' + esc(d.otsuName) + '）が行うものとする。ただし、電子署名は甲及び乙が各自行う。');
+  }
+  return h + '</div>';
+}
+
+/* 締めの一文。押印版は原本どおり、電子契約版は電子署名の文言にする。 */
+function closingText(d, oinText){
+  return d.denshi
+    ? '本契約の成立を証するため、本契約書の電磁的記録を作成し、甲、乙は各々電子署名を行い、各自その電磁的記録を保管する。'
+    : oinText;
+}
+/* 保存の対象。電子契約版は電磁的記録も含むことを明記する。 */
+function hozonMono(d){
+  return d.denshi ? '契約書及び契約書に添付される書面（電磁的記録によるものを含む。）'
+                  : '契約書及び契約書に添付される書面';
+}
+
+/* 契約期間の文（第15条1項） */
+function kikanText(d){
+  const f = wStr(d.kikanFrom), t = wStr(d.kikanTo);
+  return '本契約は、有効期間を令和　' + f.y + '年　' + f.m + '月' + f.d + '日から令和　' + t.y + '年　'
+    + t.m + '月' + t.d + '日までの１年間とし、期間満了の１ヶ月前までに、甲乙の一方から相手方に対する'
+    + '書面による解約の申し入れがない限り、同一条件で更新されたものとし、その後も同様とする。';
+}
+
+/* 署名欄 */
+function signBlock(d, otsuLabel, otsuAddr, otsuName, otsuTitle, otsuRep){
+  const k = wStr(d.keiyakuDate);
+  return '<div class="date">令和　' + k.y + '年　' + k.m + '月　' + k.d + '日</div>'
+  + '<div class="sign">'
+  +   '<div class="l1">排　出　事　業　者（甲）　　' + esc(d.kouAddr) + '</div>'
+  +   '<div class="l2">' + esc(d.kouName) + '</div>'
+  +   '<div class="l3">' + esc(d.kouTitle) + '　　' + esc(d.kouRep) + '</div>'
+  +   '<div class="l1">' + otsuLabel + '　　' + esc(otsuAddr) + '</div>'
+  +   '<div class="l2">' + esc(otsuName) + '</div>'
+  +   '<div class="l3">' + esc(otsuTitle) + '　　' + esc(otsuRep) + '</div>'
+  + '</div>';
+}
+
+/* =========================================================================
+   収集・運搬用
+   ========================================================================= */
+function renderUnpan(d){
+  const shoriGyosha = d.sName || '処分業者';
+  let h = '';
+  h += '<div class="title">産業廃棄物処理委託基本契約書</div>';
+  h += '<div class="kind">【収集・運搬用】</div>';
+
+  h += '<div class="lead"><div class="row"><span class="lb" style="width:34mm">排 出 事 業 者</span>：'
+    + fill(d.kouName,'62mm') + '<span class="tail">（以下「甲」という。）と、</span></div></div>';
+  h += '<div class="lead"><div class="row"><span class="lb" style="width:34mm">収集・運搬業者</span>：'
+    + fill(d.otsuName,'62mm') + '<span class="tail">（以下「乙」という。）は、</span></div></div>';
+  h += '<div class="lead ind"><div class="row"><span class="lb" style="width:20mm">（名　称）</span>'
+    + fill(d.genbaName,'grow') + '</div></div>';
+  h += '<div class="lead"><div class="row"><span class="lb" style="width:24mm">甲 の 事 業 場</span>：'
+    + '<span class="tail" style="padding-left:0">（所在地）</span>' + fill(d.genbaAddr,'grow')
+    + '<span class="tail">から排出される産業廃棄物の</span></div></div>';
+  h += '<div class="cont">収集・運搬に関して次のとおり基本契約を締結する。</div>';
+
+  /* 第1条 */
+  h += '<div class="art"><div class="ah">第１条（法の遵守）</div>'
+    + '<div class="p">甲乙は、処理業務の遂行にあたって廃棄物の処理及び清掃に関する法律その他関係法令を遵守するものとする。</div></div>';
+
+  /* 第2条 */
+  h += '<div class="art"><div class="ah">第２条（委託内容）</div>'
+    + '<div class="li"><span class="n">1.</span><span class="b">（乙の事業範囲）</span></div>'
+    + '<div class="p">乙の事業範囲は以下のとおりであり、乙はこの事業範囲を証するものとして、許可証の写しを甲に提出し、本契約書に添付する。なお、許可事項に変更があったときは、乙は速やかにその旨を甲に書面をもって通知するとともに、変更後の許可証の写しを甲に提出し、本契約書に添付する。</div>'
+    + '<div class="box">'
+    +   '<div style="margin:2mm 0 1mm">◎乙の収集運搬に関する事業範囲</div>'
+    +   '<div class="two cols"><div class="hd">〔産廃〕　　　　　（積込地）</div><div class="hd">（最終目的地）</div></div>'
+    +   '<div class="two cols">'
+    +     '<div>' + row('許可都道府県・政令市','36mm', d.otsuPref1) + '</div>'
+    +     '<div>' + row('許可都道府県・政令市','36mm', d.otsuPref2) + '</div>'
+    +     '<div>' + row('許可の有効期限','36mm','許可証の写しのとおり') + '</div>'
+    +     '<div>' + row('許可の有効期限','36mm','許可証の写しのとおり') + '</div>'
+    +     '<div>' + row('事業範囲','36mm','許可証の写しのとおり') + '</div>'
+    +     '<div>' + row('事業範囲','36mm','許可証の写しのとおり') + '</div>'
+    +     '<div>' + row('許可の条件','36mm','許可証の写しのとおり') + '</div>'
+    +     '<div>' + row('許可の条件','36mm','許可証の写しのとおり') + '</div>'
+    +     '<div>' + row('許可番号','36mm', d.otsuKyokaNo) + '</div>'
+    +     '<div>' + row('許可番号','36mm','許可証の写しのとおり') + '</div>'
+    +   '</div>'
+    + '</div>'
+    + '<div class="li"><span class="n">2.</span><span class="b">甲が乙に委託する産業廃棄物の種類、数量及び単価</span></div>'
+    + '<div class="p">甲が、最終目的地に収集・運搬を委託する産業廃棄物の種類、数量及び収集・運搬単価は、次のとおりとする。</div>'
+    + '<div class="box">'
+    +   row('種類','16mm', d.shurui)
+    +   row('数量','16mm', d.suryo)
+    +   row('単価','16mm', d.unpanTanka)
+    + '</div>'
+    + '<div class="li"><span class="n">3.</span><span class="b">（輸入廃棄物の有・無）</span></div>'
+    + '<div class="p">甲が、乙に委託する産業廃棄物が輸入された廃棄物である場合は、その旨を記載する。</div>'
+    + '<div class="box"><div class="row"><span class="lb" style="width:24mm">輸 入 廃 棄 物</span>：'
+    +   fill(d.yunyu,'20mm') + '</div></div>'
+    + '<div class="li"><span class="n">4.</span><span class="b">（運搬の最終目的地）</span></div>'
+    + '<div class="p">乙は、甲から委託された第２項の産業廃棄物を、甲の指定する次の最終目的地に搬入する。</div>'
+    + '<div class="box">'
+    +   '<div class="row"><span class="lb" style="width:24mm">氏名</span>：'
+    +     fill((d.sName ? d.sName + '　　' + d.sTitle + '　' + d.sRep : ''),'grow') + '</div>'
+    +   '<div style="font-size:9pt; margin:-1mm 0 1.5mm">（法人にあっては、名称及び代表者の氏名）</div>'
+    +   row('住所','24mm', d.sAddr)
+    +   row('許可都道府県・政令市','36mm', d.sPref)
+    +   row('許可の有効期限','36mm', d.sLimit)
+    +   row('事業の区分','36mm', d.sKubun)
+    +   row('産業廃棄物の種類','36mm','許可証の写しのとおり')
+    +   row('許可の条件','36mm','許可証の写しのとおり')
+    +   row('許可番号','36mm', d.sKyokaNo)
+    +   row('事業場の名称','36mm', d.sJigyoName)
+    +   row('所在地','36mm', d.sJigyoAddr)
+    + '</div>'
+    + '<div class="li"><span class="n">5.</span><span class="b">（積替保管）</span></div>'
+    + '<div class="p">' + (d.tsumikae === 'ari'
+        ? '乙は、甲から委託された産業廃棄物の積替えを行う。'
+        : '乙は、甲から委託された産業廃棄物の積替えを行わない。') + '</div>'
+    + '</div>';
+
+  /* 第3条 */
+  h += '<div class="art"><div class="ah">第３条（適正処理に必要な情報の提供）</div>'
+    + '<div class="li"><span class="n">1.</span><span class="b">甲は、産業廃棄物の適正な処理のために必要な以下の情報を、あらかじめ書面をもって乙に提供しなければならない。以下の情報を具体化した「廃棄物データシート」（環境省の「廃棄物情報の提供に関するガイドライン（第３版）」を参照）の項目を参考に書面の作成を行うものとする。</span></div>'
+    + joho3(d)
+    + '<div class="li"><span class="n">2.</span><span class="b">甲は、委託契約期間中、適正な処理及び事故防止並びに処理費用等の観点から、委託する産業廃棄物の性状等の変更があった場合は、乙に対し速やかに書面をもってその変更の内容及び程度の情報を通知する。</span></div>'
+    + '<div class="p" style="padding-left:11mm">なお、乙の業務及び処理方法に支障を生ずるおそれがある場合の、性状等の変動幅は、製造工程又は産業廃棄物の発生工程の変更による性状の変更や腐敗等の変化、混入物の発生等の場合であり、甲は乙と通知する変動幅の範囲について、あらかじめ協議のうえ定めることとする。</div>'
+    + '<div class="li"><span class="n">3.</span><span class="b">甲は、委託する産業廃棄物の性状が書面の情報のとおりであることを確認し、乙に引き渡す容器等に表示する（環境省の「廃棄物情報の提供に関するガイドライン（第３版）」の「容器貼付用ラベル」参照）。</span></div>'
+    + '<div class="li"><span class="n">4.</span><span class="b">甲は、委託する産業廃棄物のマニフェストの記載事項は正確にもれなく記載することとし、虚偽又は記載漏れがある場合は、乙は委託物の引き取りを一時停止しマニフェストの記載修正を甲に求め、修正内容を確認の上、委託物を引き取ることとする。</span></div>'
+    + '<div class="li"><span class="n">5.</span><span class="b">甲は、次の産業廃棄物について、契約期間内に以下に定めるとおり、公的検査機関又は環境計量証明事業所において「産業廃棄物に含まれる金属等の検定方法」（昭和４８年２月環境庁告示第１３号）による試験を行い、分析証明書を乙に提示する。</span></div>'
+    + '<div class="box">'
+    +   row('産業廃棄物の種類','32mm', d.bunsekiShurui, '', '52mm')
+    +   row('提示する時期又は回数','32mm', d.bunsekiJiki, '', '52mm')
+    + '</div>'
+    + '</div>';
+
+  /* 第4条 */
+  h += '<div class="art"><div class="ah">第４条（甲、乙の責任範囲）</div>'
+    + '<div class="li"><span class="n">1.</span><span class="b">乙は、甲から委託された産業廃棄物を、その積み込み作業の開始から、第２条第４項に規定する運搬の最終目的地における荷下ろし作業の完了まで、法令に基づき適正に収集・運搬しなければならない。</span></div>'
+    + '<div class="li"><span class="n">2.</span><span class="b">乙が、前項の業務の過程において法令に違反した業務を行い、又は過失によって甲又は第三者に損害を及ぼしたときは、乙においてその損害を賠償し、甲に負担させない。</span></div>'
+    + '<div class="li"><span class="n">3.</span><span class="b">乙が第１項の業務の過程において、第三者に損害を及ぼした場合に、甲の指図又は甲の委託の仕方（甲の委託した産業廃棄物の種類もしくは性状等による原因を含む）に原因があるときは、甲において賠償し、乙に負担させない。</span></div>'
+    + '<div class="li"><span class="n">4.</span><span class="b">第１項の業務の過程において乙に損害が発生した場合に、甲の指図又は甲の委託の仕方（甲の委託した産業廃棄物の種類もしくは性状等による原因を含む）に原因があるときは、甲が乙にその損害を賠償する。</span></div>'
+    + '</div>';
+
+  /* 第5条〜第8条 */
+  h += '<div class="art"><div class="ah">第５条（再委託の禁止）</div>'
+    + '<div class="p">乙は、甲から委託された産業廃棄物の収集・運搬業務を他人に委託してはならない。ただし、甲の書面による承諾を得て法令の定める再委託の基準にしたがう場合は、この限りではない。</div></div>';
+
+  h += '<div class="art"><div class="ah">第６条（義務の譲渡等）</div>'
+    + '<div class="p">乙は、本契約上の義務を第三者に譲渡し、又は承継させてはならない。</div></div>';
+
+  h += '<div class="art"><div class="ah">第７条（委託業務終了報告）</div>'
+    + '<div class="p">乙は甲から委託された産業廃棄物の業務が終了した後、直ちに業務終了報告書を作成し甲に提出する。ただし、業務終了報告書は、収集・運搬業務については、それぞれの運搬区間に応じたマニフェストＢ２票又は、電子マニフェストの運搬終了報告で代えることができる。</div></div>';
+
+  h += '<div class="art"><div class="ah">第８条（業務の一時停止）</div>'
+    + '<div class="li"><span class="n">1.</span><span class="b">乙は、甲から委託された産業廃棄物の適正処理が困難となる事由が生じたときには、業務を一時停止し、ただちに甲に当該事由の内容及び、甲における影響が最小限となる措置を講ずる旨を書面により通知する。甲はその間は、新たな処理の委託は行わないこととする。</span></div>'
+    + '<div class="li"><span class="n">2.</span><span class="b">甲は乙から前項の通知を受けたときは、速やかに現状を把握した上、適切な措置を講ずるものとする。</span></div>'
+    + '</div>';
+
+  /* 第9条 */
+  h += '<div class="art"><div class="ah">第９条（報酬・消費税・支払い）</div>'
+    + '<div class="li"><span class="n">1.</span><span class="b">甲は、乙に対し毎月一定の期日を定めて収集・運搬業務の報酬を支払う。</span></div>'
+    + '<div class="li"><span class="n">2.</span><span class="b">甲の委託する産業廃棄物の収集・運搬業務に関する報酬は、第２条第２項にて定める単価に基づき算出する。</span></div>'
+    + '<div class="li"><span class="n">3.</span><span class="b">甲の委託する産業廃棄物の収集・運搬業務に対する報酬についての消費税は、甲が負担する。</span></div>'
+    + '<div class="li"><span class="n">4.</span><span class="b">報酬の額が経済情勢の変化及び第３条第２項、第８条等により不相当となったときは、甲、乙の協議によりこれを改定することができる。</span></div>'
+    + '<div class="li"><span class="n">5.</span><span class="b">甲は、乙から業務終了報告書を受け取った後、乙に対して処理の報酬を支払う。ただし、具体的な支払方法について別途支払い条件の定めのある場合にはそれによる。</span></div>'
+    + '<div class="li"><span class="n">6.</span><span class="b">甲は、第２条第４項の処理業者（' + esc(shoriGyosha) + '。以下「処理業者」という。）に対する処理の報酬（以下本項において「当該報酬」という。）を、乙を経由して支払うものとし、乙は、当該報酬を適切に処理業者に支払うものとする。このとき、乙は、甲が乙に対し当該報酬を適切に支払ったにもかかわらず、乙が処理業者への支払い義務を怠ったこと等に起因して処理業者に対する遅延損害金の支払い義務が課された場合又は甲もしくは処理業者に損害が生じた場合、乙がその責任と費用を負担するものとする。</span></div>'
+    + '</div>';
+
+  /* 第10条・第11条 */
+  h += '<div class="art"><div class="ah">第１０条（内容の変更）</div>'
+    + '<div class="p">甲又は乙は、必要がある場合は委託業務の内容を変更することができる。この場合において、契約単価又は契約期間を変更するとき、又は予定数量に大幅な変動が生ずるときは、甲と乙で協議の上、書面によりこれを定めるものとする。第３条第２項、第８条の場合も同様とする。</div></div>';
+
+  h += '<div class="art"><div class="ah">第１１条（機密保持）</div>'
+    + '<div class="p">甲乙は、本契約に関連して、業務上知り得た相手方の機密を第三者に漏らしてはならない。当該機密を公表する必要が生じた場合には、相手方の書面による許諾を得なければならない。</div></div>';
+
+  /* 第12条 */
+  h += '<div class="art"><div class="ah">第１２条（反社会的勢力の排除）</div>'
+    + '<div class="li"><span class="n">1.</span><span class="b">乙が個人であると団体であるとを問わず、次の各号のいずれかに該当した場合には、甲は何らの催告を要しないで、本契約の全部または一部を解除することができる。</span></div>'
+    + art12()
+    + '<div class="li"><span class="n">2.</span><span class="b">甲が前項の規定により本契約の全部または一部を解除した場合には、乙に損害が生じても、甲はこれを一切賠償しない。</span></div>'
+    + '</div>';
+
+  /* 第13条 */
+  h += '<div class="art"><div class="ah">第１３条（契約の解除）</div>'
+    + '<div class="li"><span class="n">1.</span><span class="b">甲乙は、相手方が本契約の各条項のいずれかに違反したときは、書面による催告の上、相互に本契約を解除することができる。</span></div>'
+    + '<div class="li"><span class="n">2.</span><span class="b">甲乙は、相手方が反社会的勢力（暴力団等）である場合又は密接な関係がある場合には、相互に催告することなく、本契約を解除することができる。</span></div>'
+    + '<div class="li"><span class="n">3.</span><span class="b">甲又は乙から本契約を解除した場合においては、本契約に基づいて甲から引き渡しを受けた産業廃棄物の処理が未だに完了していないものがあるときは、乙又は甲は、次の措置を講じなければならない。</span></div>'
+    + '<div class="li d2"><span class="n w2">（1）</span><span class="b">乙の義務違反により甲が解除した場合</span></div>'
+    + '<div class="li d3"><span class="n">イ</span><span class="b">乙は、解除された後も、その産業廃棄物に対する本契約に基づく乙の業務を遂行する責任は免れないことを承知し、その残っている産業廃棄物についての収集・運搬の業務を自ら実行するか、もしくは甲の承諾を得た上、許可を有する別の業者に自己の費用をもって行わせなければならない。</span></div>'
+    + '<div class="li d3"><span class="n">ロ</span><span class="b">乙が他の業者に委託する場合に、その業者に対する報酬を支払う資金がないときは、乙はその旨を甲に通知し、資金のないことを明確にしなければならない。</span></div>'
+    + '<div class="li d3"><span class="n">ハ</span><span class="b">上記ロの場合、甲は、当該業者に対し、差し当たり、甲の費用負担をもって、乙のもとにある未処理の産業廃棄物の収集・運搬を行わしめるものとし、その負担した費用等を、乙に対して償還を請求することができる。</span></div>'
+    + '<div class="li d2"><span class="n w2">（2）</span><span class="b">甲の義務違反により乙が解除した場合</span></div>'
+    + '<div class="p" style="padding-left:17mm">乙は甲に対し、甲の義務違反による損害の賠償を請求するとともに、乙のもとにある未処理の産業廃棄物を、甲の費用をもって当該産業廃棄物を引き取ることを要求し、もしくは乙の費用負担をもって甲方に運搬した上、甲に対し当該運搬の費用を請求することができる。</div>'
+    + '</div>';
+
+  /* 第14条・第15条 */
+  h += '<div class="art"><div class="ah">第１４条（協議）</div>'
+    + '<div class="p">本契約に定めのない事項又は本契約の各条項に関する疑義が生じたときは、関係法令にしたがい、その都度甲乙が誠意をもって協議しこれを取り決めるものとする。</div></div>';
+
+  h += '<div class="art"><div class="ah">第１５条（契約期間及び保存）</div>'
+    + '<div class="li"><span class="n">1.</span><span class="b">' + kikanText(d) + '</span></div>'
+    + '<div class="li"><span class="n">2.</span><span class="b">甲、乙は' + hozonMono(d) + 'を、契約の終了後から５年間保存する。</span></div>'
+    + '</div>';
+
+  h += art16(d, false);
+
+  h += '<div class="closeblk">'
+    + '<div class="p" style="margin-top:6mm">'
+    +   closingText(d, '本契約の成立を証するために本書２通を作成し、甲、乙は各々記名押印の上、各本書を保有する。') + '</div>'
+    + signBlock(d, '収 集 ・ 運 搬 業 者（乙）', d.otsuAddr, d.otsuName, d.otsuTitle, d.otsuRep)
+    + '</div>';
+
+  return '<div class="doc" id="docUnpan">' + h + '</div>';
+}
+
+/* =========================================================================
+   処分用
+   ========================================================================= */
+function renderShobun(d){
+  let h = '';
+  h += '<div class="title">産業廃棄物処理委託基本契約書</div>';
+  h += '<div class="kind">【処 分 用】</div>';
+
+  h += '<div class="lead"><div class="row"><span class="lb" style="width:34mm">排 出 事 業 者</span>：'
+    + fill(d.kouName,'62mm') + '<span class="tail">（以下「甲」という。）と、</span></div></div>';
+  h += '<div class="lead"><div class="row"><span class="lb" style="width:34mm">処 分 業 者</span>：'
+    + fill(d.sName,'62mm') + '<span class="tail">（以下「乙」という。）は、</span></div></div>';
+  h += '<div class="lead ind"><div class="row"><span class="lb" style="width:20mm">（名　称）</span>'
+    + fill(d.genbaName,'grow') + '</div></div>';
+  h += '<div class="lead"><div class="row"><span class="lb" style="width:24mm">甲 の 事 業 場</span>：'
+    + '<span class="tail" style="padding-left:0">（所在地）</span>' + fill(d.genbaAddr,'grow')
+    + '<span class="tail">から排出される産業廃棄物の</span></div></div>';
+  h += '<div class="cont">処分に関して次のとおり基本契約を締結する。</div>';
+
+  h += '<div class="art"><div class="ah">第１条（法の遵守）</div>'
+    + '<div class="p">甲及び乙は、処理業務の遂行にあたって廃棄物の処理及び清掃に関する法律その他関係法令を遵守するものとする。</div></div>';
+
+  h += '<div class="art"><div class="ah">第２条（委託内容）</div>'
+    + '<div class="li"><span class="n">１．</span><span class="b">（乙の事業範囲）</span></div>'
+    + '<div class="p">乙の事業範囲は以下のとおりであり、乙はこの事業範囲を証するものとして、許可証の写しを甲に提出し、本契約書に添付する。なお、許可事項に変更があったときは、乙は速やかにその旨を甲に通知するとともに、変更後の許可証の写しを甲に提出し、本契約書に添付する。</div>'
+    + '<div class="box">'
+    +   '<div style="margin:1mm 0">◎処分に関する事業範囲</div>'
+    +   '<div>〔産廃〕</div>'
+    +   '<div class="two cols">'
+    +     '<div>' + row('許可都道府県・政令市','36mm', d.sPref) + '</div>'
+    +     '<div>' + row('産業廃棄物の種類','32mm','別紙許可証の通り') + '</div>'
+    +     '<div>' + row('許可の有効期限','36mm','別紙許可証の通り') + '</div>'
+    +     '<div>' + row('許可の条件','32mm','別紙許可証の通り') + '</div>'
+    +     '<div>' + row('事業区分','36mm','別紙許可証の通り') + '</div>'
+    +     '<div>' + row('許可番号','32mm', d.sKyokaNo) + '</div>'
+    +   '</div>'
+    + '</div>'
+    + '<div class="li"><span class="n">２．</span><span class="b">（委託する産業廃棄物の種類、数量及び単価）</span></div>'
+    + '<div class="p">甲が乙に処分を委託する産業廃棄物の種類、数量及び委託単価（税別）は、次のとおりとする。</div>'
+    + '<div class="box">'
+    +   '<div style="margin:1mm 0">◎処分に関する種類、数量及び委託単価</div>'
+    +   row('種類','16mm', d.shurui)
+    +   row('数量','16mm', d.suryo)
+    +   row('単価','16mm', d.shobunTanka)
+    + '</div>'
+    + '<div class="li"><span class="n">３．</span><span class="b">（危険物混入の禁止）</span></div>'
+    + '<div class="p">甲が乙に委託する産業廃棄物に発火性・爆発性のある危険物、または契約外産業廃棄物を入れてはならない。万が一、混入があった場合、甲乙相談の上、甲は乙に別途費用を支払い、また乙が処理困難な物については、甲は返却に応じるものとする。</div>'
+    + '<div class="li"><span class="n">４．</span><span class="b">（輸入廃棄物の有・無）</span></div>'
+    + '<div class="p">甲が、乙に委託する産業廃棄物が輸入された廃棄物である場合は、その旨を記載する。</div>'
+    + '<div class="box"><div class="row"><span class="lb" style="width:24mm">輸 入 廃 棄 物</span>：'
+    +   fill(d.yunyu,'20mm') + '</div></div>'
+    + '<div class="li"><span class="n">５．</span><span class="b">（処分の場所、方法及び処理能力）</span></div>'
+    + '<div class="p">乙は甲から委託された前項の産業廃棄物を次のとおり処分する。</div>'
+    + '<div class="box">'
+    +   row('事業場の名称','32mm', d.sJigyoName)
+    +   row('所在地','32mm', d.sJigyoAddr)
+    +   row('処分の方法','32mm', d.sHouhou)
+    +   row('施設の処理能力','32mm', d.sNouryoku)
+    + '</div>'
+    + '<div class="li"><span class="n">６．</span><span class="b">（最終処分の場所、方法及び処理能力）</span></div>'
+    + '<div class="p">甲から乙に委託された産業廃棄物の最終処分（予定）を別紙１のとおりとする。</div>'
+    + '<div class="li"><span class="n">７．</span><span class="b">（搬入業者）</span></div>'
+    + '<div class="p">第２条第２項の産業廃棄物の第２条第５項に指定する事業場への搬入は、次の収集・運搬業者が行うものとする。</div>'
+    + '<div class="box">'
+    +   '<div class="row"><span class="lb" style="width:24mm">氏名</span>：'
+    +     fill((d.otsuName ? d.otsuName + '　　' + d.otsuTitle + '　' + d.otsuRep : ''),'grow') + '</div>'
+    +   row('住所','24mm', d.otsuAddr)
+    +   row('許可都道府県・政令市','36mm', d.otsuPref1 + '（積込地及び最終目的地）')
+    +   row('許可の有効期限','36mm','許可証の写しのとおり')
+    +   row('事業範囲','36mm','積替え・保管を含まない')
+    +   row('許可の条件','36mm','なし')
+    +   row('許可番号','36mm', d.otsuKyokaNo)
+    + '</div>'
+    + '</div>';
+
+  h += '<div class="art"><div class="ah">第３条（適正処理に必要な情報の提供）</div>'
+    + '<div class="li"><span class="n">１．</span><span class="b">甲は、産業廃棄物の適正な処理のために必要な以下の情報を、あらかじめ書面をもって乙に提供しなければならない。以下の情報を具体化した「廃棄物データシート」（環境省の「廃棄物情報の提供に関するガイドライン（第３版）」を参照）の項目を参考に書面の作成を行うものとする。</span></div>'
+    + joho3(d)
+    + '<div class="li"><span class="n">２．</span><span class="b">甲は委託契約期間中、適切な処理及び事故防止ならびに処理費用等の観点から、委託する産業廃棄物の性状等の変更があった場合は、乙に対し速やかに書面をもってその変更の内容及び程度の情報を通知する。</span></div>'
+    + '<div class="p" style="padding-left:11mm">なお、乙の業務及び処理方法に支障を生ずるおそれがある場合の、性状等の変動幅は、製造工程または産業廃棄物の発生工程の変更による性状の変更や腐敗等の変化、混入物の発生等の場合であり、甲は乙と通知する変動幅の範囲について、あらかじめ協議の上定めることとする。</div>'
+    + '<div class="li"><span class="n">３．</span><span class="b">甲は委託する産業廃棄物の性状が書面の情報のとおりであることを確認し、乙に引き渡す容器等に表示する（環境省の「廃棄物情報の提供に関するガイドライン（第３版）」の「容器貼付用ラベル」参照）。</span></div>'
+    + '<div class="li"><span class="n">４．</span><span class="b">甲は委託する産業廃棄物のマニフェストの記載事項は正確に漏れなく記載することとし、虚偽または記載漏れがある場合は、乙は委託物の引き取りを一時停止しマニフェストの記載修正を甲に求め、修正内容を確認の上、委託物を引き取ることとする。</span></div>'
+    + '<div class="li"><span class="n">５．</span><span class="b">甲は次の産業廃棄物について、契約期間内に以下に定めるとおり、公的検査機関または環境計量証明事業所において「産業廃棄物に含まれる金属等の検定方法」（昭和４８年２月環境庁告示第１３号）による試験を行い、分析証明書を乙に提示する。</span></div>'
+    + '<div class="box">'
+    +   row('産業廃棄物の種類','32mm', d.bunsekiShurui, '', '52mm')
+    +   row('提示する時期または回数','32mm', d.bunsekiJiki, '', '52mm')
+    + '</div>'
+    + '</div>';
+
+  h += '<div class="art"><div class="ah">第４条（甲乙の責任範囲）</div>'
+    + '<div class="li"><span class="n">１．</span><span class="b">乙は甲から委託された産業廃棄物を処分の完了まで、法令に基づき適正に処理しなければならない。</span></div>'
+    + '<div class="li"><span class="n">２．</span><span class="b">乙は甲に対し、前項の業務過程において法令に違反した業務を行い、また、過失によって甲または第三者に損害を及ぼしたときは、乙においてその損害を賠償し、甲に負担させない。</span></div>'
+    + '<div class="li"><span class="n">３．</span><span class="b">乙が第１項の業務過程において、乙または第三者に損害が発生した場合に、乙に過失がない場合は甲において賠償し、乙に負担させない。</span></div>'
+    + '</div>';
+
+  h += '<div class="art"><div class="ah">第５条（再委託の禁止）</div>'
+    + '<div class="p">乙は甲から委託された産業廃棄物の処分業務を他人に委託してはならない。ただし、あらかじめ甲の書面による承諾を得て法令の定める再委託の基準にしたがう場合は、この限りではない。</div></div>';
+
+  h += '<div class="art"><div class="ah">第６条（義務の譲渡等）</div>'
+    + '<div class="p">乙は本契約上の義務を第三者に譲渡し、または承継させてはならない。ただし、甲の書面による承諾を得た場合にはこの限りではない。</div></div>';
+
+  h += '<div class="art"><div class="ah">第７条（委託業務終了報告）</div>'
+    + '<div class="p">乙は甲から委託された産業廃棄物の業務が終了した後、直ちに業務終了報告書を作成し甲に提出する。ただし、業務終了報告書は、処分業務についてはマニフェストＤ票または電子マニフェストの処分終了報告で代えることができる。</div></div>';
+
+  h += '<div class="art"><div class="ah">第８条（業務の一時停止）</div>'
+    + '<div class="p">乙はやむを得ない事由があるときは、甲の了解を得て、一時業務を停止することができる。この場合には、乙は甲にその事由を説明し、かつ甲における影響が最小限となるよう努力する。</div></div>';
+
+  h += '<div class="art"><div class="ah">第９条（報酬・消費税・支払い）</div>'
+    + '<div class="li"><span class="n">１．</span><span class="b">甲は、乙に対し毎月一定の期日を定めて処分業務の報酬を支払う。</span></div>'
+    + '<div class="li"><span class="n">２．</span><span class="b">甲の委託する産業廃棄物の処分業務に関する報酬は、第２条第２項にて定める単価に基づき算出する。</span></div>'
+    + '<div class="li"><span class="n">３．</span><span class="b">報酬の額が経済情勢の変化及び第３条第２項等により不相当となったときは、甲乙双方の協議によりこれを改定することができる。</span></div>'
+    + '<div class="li"><span class="n">４．</span><span class="b">甲の委託する産業廃棄物の処分業務に対する報酬についての消費税は、甲が負担する。</span></div>'
+    + '<div class="li"><span class="n">５．</span><span class="b">甲は乙からの業務終了報告書を受け取った後、乙に対して処理の報酬を第２条第７項の搬入業者（' + esc(d.otsuName) + '）へ支払い、搬入業者から乙へ支払うものとする。</span></div>'
+    + '</div>';
+
+  h += '<div class="art"><div class="ah">第１０条（内容の変更）</div>'
+    + '<div class="p">甲または乙は、必要がある場合は委託業務の内容を変更することができる。この場合において、契約単価または契約期間を変更するとき、または予定数量に大幅な変動が生ずるときは、甲と乙で協議の上、書面によりこれを定めるものとする。第３条第２項の場合も同様とする。</div></div>';
+
+  h += '<div class="art"><div class="ah">第１１条（機密保持）</div>'
+    + '<div class="p">甲、乙は本契約に関連して、業務上知り得た相手方の機密を第三者に漏らしてはならない。当該機密を公表する必要が生じた場合には、相手方の書面による許諾を得なければならない。</div></div>';
+
+  h += '<div class="art"><div class="ah">第１２条（反社会的勢力の排除）</div>'
+    + '<div class="li"><span class="n">１．</span><span class="b">乙が個人であると団体であるとを問わず、次の各号のいずれかに該当した場合には、甲は何らの催告を要しないで、本契約の全部または一部を解除することができる。</span></div>'
+    + art12()
+    + '<div class="li"><span class="n">２．</span><span class="b">甲が前項の規定により本契約の全部または一部を解除した場合には、乙に損害が生じても、甲はこれを一切賠償しない。</span></div>'
+    + '</div>';
+
+  h += '<div class="art"><div class="ah">第１３条（契約の解除）</div>'
+    + '<div class="li"><span class="n">１．</span><span class="b">甲及び乙は、相手方が本契約の各条項のいずれかに違反したときは、催告の上、本契約を解除することができる。</span></div>'
+    + '<div class="li"><span class="n">２．</span><span class="b">ただし、甲または乙から契約を解除した場合に、本契約に基づいて甲から引き渡しを受けた産業廃棄物の処理が未だに完了していないものがあるときは、乙または甲は、次の措置を講じなければならない。</span></div>'
+    + '<div class="li d2"><span class="n w2">（1）</span><span class="b">乙の義務違反により甲が解除した場合</span></div>'
+    + '<div class="li d3"><span class="n">イ</span><span class="b">乙は解除された後も、その産業廃棄物に対する本契約に基づく乙の業務を遂行する責任は免れないことを承知し、その残っている産業廃棄物についての収集・運搬及び処分の業務を自ら実行するか、もしくは甲の承諾を得た上、許可を有する別の業者に自己の費用をもって行わせなければならない。</span></div>'
+    + '<div class="li d3"><span class="n">ロ</span><span class="b">乙が他の業者に委託する場合に、その業者に対する報酬を支払う資金がないときには、乙はその旨を甲に通知し、資金のないことを明確にしなければならない。</span></div>'
+    + '<div class="li d3"><span class="n">ハ</span><span class="b">上記ロの場合、甲は当該業者に対し、差し当たり、甲の費用負担をもって、乙のもとにある未処理の産業廃棄物の収集・運搬及び処分を行わしめるものとし、その負担した費用を、乙に対して償還を請求することができる。</span></div>'
+    + '<div class="li d2"><span class="n w2">（2）</span><span class="b">甲の義務違反により乙が解除した場合</span></div>'
+    + '<div class="p" style="padding-left:17mm">乙は甲に対し、甲の義務違反による損害の賠償を請求するとともに、乙のもとにある未処理の産業廃棄物を、甲の費用をもって当該産業廃棄物を引き取ることを要求し、もしくは乙自ら甲方に運搬した上、甲に対し当該運搬の費用を請求することができる。</div>'
+    + '</div>';
+
+  h += '<div class="art"><div class="ah">第１４条（協議）</div>'
+    + '<div class="p">本契約に定めのない事項または本契約の各条項に関する疑義が生じたときは、関係法令にしたがい、その都度甲、乙が誠意をもって協議しこれを取り決めるものとする。</div></div>';
+
+  h += '<div class="art"><div class="ah">第１５条（契約期間及び保存）</div>'
+    + '<div class="li"><span class="n">１．</span><span class="b">' + kikanText(d) + '</span></div>'
+    + '<div class="li"><span class="n">２．</span><span class="b">甲及び乙は、' + hozonMono(d) + 'を契約の終了後５年間保存する。</span></div>'
+    + '</div>';
+
+  h += art16(d, true);
+
+  h += '<div class="closeblk">'
+    + '<div class="p" style="margin-top:6mm">'
+    +   closingText(d, '本契約の成立を証するために本書２通を作成し、甲、乙は各々記名押印の上、各本書１通を保有する。') + '</div>'
+    + signBlock(d, '処 　分 　業 　者（乙）', d.sAddr, d.sName, d.sTitle, d.sRep)
+    + '</div>';
+
+  return '<div class="doc" id="docShobun">' + h + '</div>';
+}
+
+/* =========================================================================
+   別表1 産業廃棄物・最終処分先（予定）一覧
+   ※さつきから受け取った一覧（更新：令和元年8月）をそのまま載せている。
+     さつきが一覧を更新したら、この BEPPYO の中身を差し替えること。
+   ========================================================================= */
+const BEPPYO = [
+ ['第7121-000299','泉興業株式会社','兵庫県尼崎市末広町<br>1-3-5、1-3-16','減容固化<br>RPFとして売却','52.1t／日','廃プラ<br>紙くず<br>繊維くず<br>木くず','1'],
+ ['第09143004313号','J&amp;T環境株式会社','広島県福山市<br>箕沖町115番-1','造粒<br>処理後、RPFと<br>して自社利用','56.4t／日','廃プラ<br>紙くず<br>繊維くず','2'],
+ ['第6620162645号','(有)アルファフォルム','大阪市住之江区<br>南港南1-1-175','減容固化<br>処理後、RPF<br>として売却','138t／日','廃プラ<br>紙くず<br>繊維くず','3'],
+ ['第02720007550号','松崎商事(株)<br>岸和田S・R事業所','大阪府岸和田市木材町10-1','減容固化<br>処理後、RPF<br>として売却','64t／日','廃プラ','4'],
+ ['02121050046','エコムカワムラ株式会社','岐阜県安八郡輪之内町里<br>85番地の3　外10筆','押出成型<br>RPFとして<br>売却','160t／日','廃プラ<br>木くず<br>紙くず','5'],
+ ['第6620046625号','株式会社さつき','大阪市大正区<br>鶴町4-12-27','減容固化<br>インゴットとして売却<br>破砕<br>有価物として売却','0.4t／日<br>8.5㎥／日','金属くず<br>紙くず<br>廃プラ','6'],
+ ['第6620003319号','木材開発株式会社<br>（平林工場）','大阪市住之江区<br>平林北2-6-50','破砕<br>処理後、チップ<br>として売却','120t／日','木くず','7'],
+ ['第7121-000299','泉興業株式会社','兵庫県尼崎市末広町<br>1-3-5、1-3-16','破砕<br>チップとして<br>売却','160t／日','木くず','8'],
+ ['第06522005708号','株式会社京都<br>環境保全公社','京都府京都市伏見区<br>横大路千両松町126番地','焼却<br>処理後、燃え<br>殻として埋立','廃プラ164.9t／日<br>紙くず、木くず、<br>繊維くず157t／日','廃プラスチック類<br>紙くず、木くず<br>繊維くず','9'],
+ ['第6620004658号<br>第6720004658号','㈱ダイカン<br>㈱ダイカン堺事業所','大阪市鶴見区焼野3-2-79<br>堺市西区築港新町3-31','焼却<br>処理後、燃え<br>殻として埋立','240t／日','廃プラスチック類<br>紙くず、木くず<br>繊維くず','10'],
+ ['第6920001308号','株式会社パルテック','兵庫県神戸市東灘区<br>住吉浜町12番地','焼却<br>処理後、燃え<br>殻として埋立','80t／日','廃プラスチック類<br>紙くず、木くず<br>繊維くず','11'],
+ ['第7021027960号','西播商事株式会社','兵庫県姫路市飾磨区<br>中島字宝来3067-18','焼却<br>処理後、燃え<br>殻として埋立','3炉合計<br>199.62t／日','廃プラスチック類<br>紙くず、木くず<br>繊維くず','12'],
+ ['第02521004656号','株式会社カンポ<br>（滋賀工場）','滋賀県蒲生郡日野町大字<br>奥之池字渡り山553番1','焼却<br>処理後、燃え<br>殻として埋立','廃プラ38.2t／日<br>紙くず76.2t／日<br>木くず76.2t／日<br>繊維くず68.5t／日','廃プラスチック類<br>紙くず、木くず<br>繊維くず','13'],
+ ['第03426002986号','株式会社尾道開発','広島県尾道市美ノ郷町<br>三成字小田151番地2','焼却<br>処理後、燃え<br>殻として埋立','2炉合計<br>93.84t／日','廃プラスチック類<br>紙くず、木くず<br>繊維くず','14'],
+ ['許可を要しない','大阪湾広域臨海環境<br>整備センター<br>（神戸沖埋立処分場）','神戸市東灘区向洋町地先','海面埋立<br>（管理型）','15,000,000㎥','11の焼却後<br>の燃え殻','15'],
+ ['第3042017365号','株式会社三高産業','和歌山県紀の川市粉河字<br>別所谷3186番106他　外29筆<br>和歌山県紀の川市東毛字下東尾367番　外13筆','安定型埋立','467,900㎡<br>68,270㎡','ガラス、<br>コンクリート、<br>陶磁器くず','16'],
+ ['第3640047058号','株式会社明和クリーン','徳島県三好市山城町寺野字アゲクラ<br>894番地ほか9筆及び894番地先水路<br>並びに同字大休場957番地1ほか23筆','管理型埋立','752.463㎡','12の焼却後<br>の燃え殻','17'],
+ ['2630005708','株式会社京都<br>環境保全公社','京都府船井郡京丹波町<br>猪鼻冠石1番地1ほか36筆','管理型埋立','1,650,000㎥','9、10、13の<br>焼却後の<br>燃え殻','18'],
+ ['第09131004554号','財団法人広島県<br>環境保全公社','広島県福山市<br>箕沖町107番1','管理型埋立','685,975㎡','14の焼却後<br>の燃え殻','19']
+];
+
+function renderBeppyo(){
+  let h = '<div class="bt">別表 1　　産業廃棄物・最終処分先（予定）一覧</div>';
+  h += '<table class="bp"><colgroup>'
+    + '<col style="width:15%"><col style="width:17%"><col style="width:25%">'
+    + '<col style="width:14%"><col style="width:13%"><col style="width:12%"><col style="width:4%">'
+    + '</colgroup><tr>'
+    + '<th>最終処分先の番号</th><th>事業場の名称</th><th>所在地</th>'
+    + '<th>処分方法</th><th>処理能力</th><th>種類</th><th>番号</th></tr>';
+  BEPPYO.forEach(r => {
+    h += '<tr>' + r.map((c,i) =>
+      '<td' + (i === 2 && c.length > 40 ? ' class="sm"' : '') + '>' + c + '</td>').join('') + '</tr>';
+  });
+  h += '</table><div class="bpfoot">更新：令和 元年 8月</div>';
+  return '<div class="doc land" id="docBeppyo">' + h + '</div>';
+}
+
+/* ---------- 許可証の写し ----------
+   スキャン画像は kyoka/ フォルダに置いてある。許可が更新されたら
+   同じファイル名で入れ替えれば、ツール側の修正は要らない。 */
+const KYOKA = {
+  daisen:  {src:'kyoka/daisen-unpan.jpg',   alt:'大泉衛生株式会社 産業廃棄物収集運搬業許可証（第02700173953号・令和10年11月5日まで）'},
+  satsuki: {src:'kyoka/satsuki-shobun.jpg', alt:'株式会社さつき 産業廃棄物処分業許可証（第6620046625号・令和15年6月10日まで）'}
+};
+function attach(k){
+  return '<div class="doc attach"><img src="' + k.src + '" alt="' + esc(k.alt) + '"></div>';
+}
+/* 委託先がさつき以外のときは、その会社の許可証を持っていないので大泉衛生の分だけ付ける */
+function kyokaSet(order){
+  if($('useKyoka').value !== '1') return '';
+  const sat = $('preset').value === 'satsuki';
+  return order.filter(k => sat || k === KYOKA.daisen).map(attach).join('');
+}
+
+/* ---------- 描画 ---------- */
+let view = 'all';
+function render(){
+  const d = data();
+  let h = '';
+  if($('useUnpan').checked  && (view === 'all' || view === 'unpan')){
+    h += renderUnpan(d);
+    /* 原本と同じ並び：さつき許可証 → 大泉衛生許可証 */
+    h += kyokaSet([KYOKA.satsuki, KYOKA.daisen]);
+  }
+  if($('useShobun').checked && (view === 'all' || view === 'shobun')){
+    h += renderShobun(d);
+    /* 原本と同じ並び：大泉衛生許可証 → さつき許可証 → 別表1 */
+    h += kyokaSet([KYOKA.daisen, KYOKA.satsuki]);
+    if(d.useBeppyo) h += renderBeppyo();
+  }
+  $('stage').innerHTML = h || '<div style="padding:40px; text-align:center; color:#5b6470">'
+    + '作る書類にチェックを入れてください</div>';
+}
+
+document.querySelectorAll('.docbtn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.docbtn').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    view = b.dataset.view;
+    render();
+  });
+});
+document.addEventListener('input', e => {
+  if(e.target.closest('.panel.noprint')) render();
+});
+document.addEventListener('change', e => {
+  if(e.target.closest('.panel.noprint')) render();
+});
+
+/* ---------- 保存・呼び出し ---------- */
+const KEY = 'daisen_sanpai_keiyaku_v1';
+function allFields(){
+  return [...document.querySelectorAll('.panel.noprint input, .panel.noprint select')]
+    .filter(el => el.id);
+}
+$('btnSave').addEventListener('click', () => {
+  const o = {};
+  allFields().forEach(el => o[el.id] = el.type === 'checkbox' ? el.checked : el.value);
+  localStorage.setItem(KEY, JSON.stringify(o));
+  $('btnSave').textContent = '保存しました';
+  setTimeout(() => $('btnSave').textContent = '保存', 1500);
+});
+$('btnLoad').addEventListener('click', () => {
+  const s = localStorage.getItem(KEY);
+  if(!s){ alert('保存された内容がありません'); return; }
+  const o = JSON.parse(s);
+  allFields().forEach(el => {
+    if(o[el.id] === undefined) return;
+    if(el.type === 'checkbox') el.checked = o[el.id]; else el.value = o[el.id];
+  });
+  syncType();
+  render();
+});
+$('btnClear').addEventListener('click', () => {
+  if(!confirm('入力した内容を全部消します。よろしいですか？')) return;
+  ['kouName','kouAddr','kouRep','genbaName','genbaAddr','shurui','suryo',
+   'unpanTanka','shobunTanka','keiyakuDate','kikanFrom','kikanTo'].forEach(id => $(id).value = '');
+  document.querySelectorAll('[data-shurui]').forEach(c => c.checked = false);
+  delete $('kikanTo').dataset.touched;
+  render();
+});
+
+/* 電子契約版のときだけサービス名の入力欄を出す */
+function syncType(){
+  $('serviceWrap').classList.toggle('hide', $('keiyakuType').value !== 'denshi');
+}
+$('keiyakuType').addEventListener('change', syncType);
+
+/* 起動時：契約日は今日を入れておく */
+(function init(){
+  const t = new Date();
+  $('keiyakuDate').value = t.toISOString().slice(0,10);
+  syncType();
+  render();
+})();
+</script>
+</body>
+</html>
